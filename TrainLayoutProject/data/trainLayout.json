@@ -1,0 +1,38 @@
+{
+    "train_id": 6,
+    "trains": [
+        {
+            "type": "\u7535\u673a\u8f66",
+            "color": "#ff8000",
+            "number": "328",
+            "id": 1,
+            "x": 198,
+            "y": 95,
+            "tag": "train_1",
+            "rect": 9,
+            "text": 10
+        },
+        {
+            "type": "\u7535\u673a\u8f66",
+            "color": "#80ff00",
+            "number": "1502",
+            "id": 4,
+            "x": 72,
+            "y": 97,
+            "tag": "train_4",
+            "rect": 11,
+            "text": 12
+        },
+        {
+            "type": "\u81ea\u7ffb\u8f66",
+            "color": "#ff8040",
+            "number": "321",
+            "id": 5,
+            "x": 324,
+            "y": 96,
+            "tag": "train_5",
+            "rect": 13,
+            "text": 14
+        }
+    ]
+}
