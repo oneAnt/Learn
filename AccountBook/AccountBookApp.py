@@ -5,6 +5,7 @@ import json
 
 
 class AccountBookApp(object):
+    """记账簿应用类"""
     def __init__(self, root):
         self.root = root
         self.file_path = "./data/accounts.json"
@@ -206,5 +207,3 @@ class AccountBookApp(object):
                         ] 
                     }
             json.dump(data, f, ensure_ascii=False, indent=4)
-
-
