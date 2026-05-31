@@ -1,1 +1,3 @@
-平时练习做的一些小工具
+Python编程练习项目
+TrainLayoutProject-机列车分布位置图
+AccountBook-记账簿
