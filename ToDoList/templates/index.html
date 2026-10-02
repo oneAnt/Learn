@@ -32,7 +32,7 @@
                         <form class="form-group" action="{% url 'add' %}" method="post">
                             {% csrf_token %}
                             <div class="input-group md-2">
-                                <input name="task" type="text" class="form-control" autocomplete="off" placeholder="请输入代办事项...">
+                                <input name="task" type="text" class="form-control" autocomplete="off" placeholder="请输入代办事项..." autofocus>
                                 <div class="input-group-append">
                                     <button id="btn" class="btn btn-primary">提交</button>
                                 </div>
@@ -65,7 +65,7 @@
                                 <p>添加你的第一个代办事项！📝</p>
                                 <p>所有提交操作支持 Enter 回车键提交~</p>
                                 <p>新增操作会刷新页面~</p>
-                                <p>完成和删除操作使用Ajax实现, 不会刷新页面~</p>
+                                <p>完成操作使用Ajax实现, 不会刷新页面~</p>
                                 <p>所有的 Todo 数据存储在 SQLite 数据库~</p>
                             </li>
                         {% endif %}
