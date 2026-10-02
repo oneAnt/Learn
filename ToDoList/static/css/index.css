@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(234, 246, 252);
+}
+
+#card-1 {
+    border: none;
+    background-color: transparent;
+}
+
+input[name="task"] {
+    border-radius: 2px;
+    border: 1px solid black;
+}
+
+#btn {
+    border-radius: 2px;
+    border: 1px solid black;
+    color: #1b1e21;
+    background-color: rgb(144, 207, 199);
+}
+
+#btn:hover {
+    background-color: rgb(149, 243, 231);
+}
+
+.todoCheckIcon {
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+}
+.todoCheckIcon:hover {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+
+.removeIcon {
+    width: 18px;
+    height: 18px;
+}
+.removeIcon:hover {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.check {
+    text-decoration: line-through;
+    background-color: rgb(208, 244, 240);
+}

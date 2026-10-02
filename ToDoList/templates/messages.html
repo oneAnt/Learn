@@ -1,0 +1,9 @@
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div {% if message.tags %} style="color:red;" {% endif %}>
+        ⚠️{{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

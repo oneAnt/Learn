@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <!-- 导入静态文件 -->
+    {% load static %}
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap 的 CSS 文件 -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- head -->
+    {% block head %}
+        <!-- 关键字和描述 -->
+        <meta name="keywords" content="Todo List,网页todo,备忘录">
+        <meta name="description" content="个人在线备忘录">
+        <link rel="icon" href="{% static 'img/favicon.png' %}">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <title>Todo List|亲自动手实现一个吧</title>
+    {% endblock %}
+</head>
+<body>
+<!-- content -->
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <!-- 中间6格 左右3格 -->
+            <div class="col-md-6 offset-md-3">
+                <div id="card-1" class="card">
+                    <img src="{% static 'img/cute-cat.png' %}" class="card-img-top" alt="Cute Cat">
+                    <div class="card-body">
+                        <!-- 表单 -->
+                        <form class="form-group" action="{% url 'add' %}" method="post">
+                            {% csrf_token %}
+                            <div class="input-group md-2">
+                                <input name="task" type="text" class="form-control" autocomplete="off" placeholder="请输入代办事项...">
+                                <div class="input-group-append">
+                                    <button id="btn" class="btn btn-primary">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                        {% include "messages.html" %}
+                    </div>
+                </div>
+                <div id="card-2" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">今日事今日毕，勿将今事待明日!</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% if tasks %}
+                            {% for task in tasks %}
+                                <li class="list-group-item {% if task.status %} check {% endif %}" >
+                                    {% if task.status %}
+                                        <img data-id="{{ task.id }}" class="todoCheckIcon" src="{% static 'img/check.png' %}" alt="check">
+                                    {% else %}
+                                        <img data-id="{{ task.id }}" class="todoCheckIcon" src="{% static 'img/circle.png' %}" alt="check">
+                                    {% endif %}
+                                    {{ task.title}}
+                                    <a href="{% url 'del' task.id %}">
+                                        <img class="removeIcon float-right" src="{% static 'img/remove.png' %}" alt="remove">
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            <li class="list-group-item">
+                                <p>添加你的第一个代办事项！📝</p>
+                                <p>所有提交操作支持 Enter 回车键提交~</p>
+                                <p>新增操作会刷新页面~</p>
+                                <p>完成和删除操作使用Ajax实现, 不会刷新页面~</p>
+                                <p>所有的 Todo 数据存储在 SQLite 数据库~</p>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+<!-- 选项 1：jQuery 和 Bootstrap 集成包（集成了 Popper） -->
+<script src="{% static 'js/jquery.slim.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
